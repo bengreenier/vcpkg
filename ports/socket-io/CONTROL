@@ -1,0 +1,4 @@
+Source: socket-io
+Version: 1.6.1
+Build-Depends: boost-system,boost-date-time,boost-random,websocketpp,rapidjson,openssl
+Description: C++11 implementation of Socket.IO client 

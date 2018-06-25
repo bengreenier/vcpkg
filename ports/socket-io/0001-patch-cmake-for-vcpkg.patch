@@ -1,0 +1,34 @@
+From 86d5b4030a279e89423b79d435f4945b1801900f Mon Sep 17 00:00:00 2001
+From: bengreenier <ben@bengreenier.com>
+Date: Sun, 24 Jun 2018 13:16:57 -0400
+Subject: [PATCH] patch-cmake-for-vcpkg
+
+---
+ CMakeLists.txt | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8c2fad3..ae61855 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -72,13 +72,9 @@ list(APPEND TARGET_LIBRARIES sioclient_tls)
+ endif()
+ 
+ install(FILES ${ALL_HEADERS} 
+-    DESTINATION "${CMAKE_CURRENT_LIST_DIR}/build/include"
++    DESTINATION ${INC_OUTDIR}
+ )
+ 
+ install(TARGETS ${TARGET_LIBRARIES}
+-    DESTINATION "${CMAKE_CURRENT_LIST_DIR}/build/lib/${CMAKE_BUILD_TYPE}"
+-)
+-
+-install(FILES ${Boost_LIBRARIES} 
+-    DESTINATION "${CMAKE_CURRENT_LIST_DIR}/build/lib/${CMAKE_BUILD_TYPE}"
+-)
++    DESTINATION ${LIB_OUTDIR}
++)
+\ No newline at end of file
+-- 
+2.10.0.windows.1
+
